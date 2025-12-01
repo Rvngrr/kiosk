@@ -54,7 +54,7 @@
     cursor: pointer;
     transition: 0.2s;
     height: 100%;
-    font-size: 0.85rem; /* smaller text */
+    font-size: 0.85rem;
 }
 
 .product-card img {
@@ -92,7 +92,6 @@
     margin-top: 0.25rem;
 }
 
-
 /* Category list */
 .category-list {
     list-style: none;
@@ -121,97 +120,59 @@
     flex-grow: 1;
 }
 
-/* Cart header */
-#cartItems .cart-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
+/* Cart table for alignment */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 5px 8px;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 0.25rem;
-    margin-bottom: 0.25rem;
-    font-size: 0.75rem;
+    vertical-align: middle;
+}
+
+.cart-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
     color: #0d6efd;
 }
 
-/* Cart container */
-#cartItems {
-    background: #f8f9fa;
-    padding: 0.75rem;
-    border-radius: 5px;
-    overflow-y: auto;
-    flex-grow: 1;
+.cart-table th.item-name {
+    text-align: left;
 }
 
-/* Cart header */
-#cartItems .cart-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.85rem;
-    color: #0d6efd;
+.cart-table th.qty-container {
+    text-align: center; /* Center the header label */
 }
 
-/* Cart items */
-#cartItems .cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 0.3rem;
-    border-bottom: 1px solid #ddd;
-    font-size: 0.85rem;
-    background: #fff;
-    border-radius: 4px;
-    margin-bottom: 0.35rem;
+.cart-table th.item-amount {
+    text-align: right;
 }
 
-/* Item name */
-#cartItems .cart-item .item-name {
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/* Quantity container */
-#cartItems .cart-item .qty-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-}
-
-#cartItems .cart-item .qty-container button.qty-btn {
-    width: 28px;
-    height: 28px;
-    padding: 0;
-    font-size: 14px;
-    margin: 0 3px;
-    border-radius: 4px;
-    border: 1px solid #ced4da;
-    background: #e9ecef;
-    color: #212529;
-}
-
-#cartItems .cart-item .qty-container span {
-    min-width: 24px;
+.cart-table th.delete-placeholder {
     text-align: center;
 }
 
-/* Amount */
-#cartItems .cart-item .item-amount {
-    width: 90px;
-    text-align: right;
-    font-weight: bold;
-    color: #212529;
+.cart-table td {
+    text-align: left;
 }
 
-/* Delete button */
-#cartItems .cart-item .delete-item {
-    margin-left: 10px;
-    font-size: 14px;
+.cart-table td.qty-container {
+    text-align: center; /* Center the quantity buttons and number */
+    width: 90px;
+}
+
+.cart-table td.item-amount {
+    text-align: right;
+    width: 90px;
+    font-weight: bold;
+}
+
+.cart-table td button.delete-item {
+    font-size: 0.8rem;
     color: #fff;
     background: #dc3545;
     border: none;
@@ -224,6 +185,32 @@
     transition: 0.2s;
 }
 
-#cartItems .cart-item .delete-item:hover {
+.cart-table td button.delete-item:hover {
     background: #bb2d3b;
+}
+
+/* Qty buttons */
+.cart-table td button.qty-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    font-size: 14px;
+    margin: 0 3px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    background: #e9ecef;
+    color: #212529;
+}
+
+.cart-table td span {
+    min-width: 24px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Qty column wider */
+.cart-table td.qty-container,
+.cart-table th.qty-container {
+    text-align: center; /* already centered */
+    width: 120px;       /* increase from 90px to 120px */
 }
